@@ -35,7 +35,8 @@
 ### Resources
 
 - AWS Lambda (Node.js)
-- AWS EventBridge
+- AWS Cloudwatch Event
+- Roles and Policies
 
 ### Terraform Initiation
 

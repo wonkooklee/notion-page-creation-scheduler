@@ -12,7 +12,6 @@
     "@notionhq/client": "^2.2.4"
   },
   "devDependencies": {
-    "@types/node": "^18.15.13",
     "node-emoji": "^1.11.0"
   }
 }

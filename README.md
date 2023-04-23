@@ -14,7 +14,7 @@
    ├─ main.tf
    ├─ module
    │  ├─ archive.tf
-   │  ├─ eventbridge.tf
+   │  ├─ cloudwatchEvent.tf
    │  ├─ handlers
    │  │  ├─ package-lock.json
    │  │  ├─ package.json

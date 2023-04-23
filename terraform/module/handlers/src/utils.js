@@ -1,18 +1,16 @@
-exports.getDate = function getDate() {
-  const date = new Date();
+const dayjs = require("dayjs");
+const timezone = require("dayjs/plugin/timezone");
+const utc = require("dayjs/plugin/utc");
 
-  return Intl.DateTimeFormat("ko-KR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    weekday: "long",
-  })
-    .format(date)
-    .replace(/ /g, "")
-    .replace(
-      /(\d{4}).(\d{1,2}).(\d{1,2})일([가-힣]{1})(.+)$/g,
-      "$1.$2.$3 ($4)"
-    );
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+exports.getDate = function getDate(isISOString) {
+  const now = dayjs().tz("Asia/Seoul");
+  if (isISOString) {
+    return now.utc(true).toISOString();
+  }
+  return now.format("YYYY.MM.DD (ddd)");
 };
 
 exports.blank = function blank(count) {
@@ -23,3 +21,5 @@ exports.blank = function blank(count) {
     },
   });
 };
+
+console.log(this.getDate(true));

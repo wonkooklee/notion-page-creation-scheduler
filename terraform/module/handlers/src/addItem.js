@@ -50,7 +50,9 @@ exports.createPage = async function createPage() {
             rich_text: [
               {
                 text: {
-                  content: `이 페이지는 scheduled-lambda에 의헤 \`${new Date().toISOString()}\`에 생성되었습니다.`,
+                  content: `이 페이지는 scheduled-lambda에 의헤 \`${getDate(
+                    true
+                  )} (KST)\`에 생성되었습니다.`,
                 },
                 type: "text",
                 annotations: {

@@ -21,5 +21,3 @@ exports.blank = function blank(count) {
     },
   });
 };
-
-console.log(this.getDate(true));

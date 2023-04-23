@@ -1,5 +1,9 @@
 # Notion Page Creation Scheduler
 
+## Blog
+
+[Lambda 스케줄링으로 매일 아침 자동으로 노션 페이지 만들기](https://velog.io/@oneook/create-notion-page-with-lambda-scheduling) (Korean)
+
 ## Directory
 
 ```sh

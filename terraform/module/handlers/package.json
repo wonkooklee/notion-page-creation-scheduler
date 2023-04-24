@@ -11,8 +11,5 @@
     "@0xadada/random-emoji": "^1.1.0",
     "@notionhq/client": "^2.2.4",
     "dayjs": "^1.11.7"
-  },
-  "devDependencies": {
-    "node-emoji": "^1.11.0"
   }
 }

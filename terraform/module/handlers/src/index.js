@@ -1,4 +1,4 @@
-const { createPage } = require("./addItem");
+const { createPage } = require("./page/create");
 
 exports.handler = async function () {
   const result = await createPage();

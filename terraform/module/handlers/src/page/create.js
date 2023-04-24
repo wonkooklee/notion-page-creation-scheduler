@@ -1,16 +1,14 @@
-const { Client } = require("@notionhq/client");
-const { blank, getDate } = require("./utils");
+const { notion } = require("../notionClient");
+const { blank, getDate } = require("../utils");
 const randomEmoji = require("@0xadada/random-emoji");
-
-const NOTION_API_KEY = process.env.NOTION_API_KEY;
-const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
-
-const notion = new Client({ auth: NOTION_API_KEY });
 
 exports.createPage = async function createPage() {
   try {
     const response = await notion.pages.create({
-      parent: { database_id: NOTION_DATABASE_ID, type: "database_id" },
+      parent: {
+        type: "database_id",
+        database_id: process.env.NOTION_DATABASE_ID,
+      },
       properties: {
         title: {
           title: [
@@ -77,18 +75,14 @@ exports.createPage = async function createPage() {
         },
         {
           object: "block",
-          to_do: {
-            rich_text: [
-              {
-                text: {
-                  content: "",
-                },
-              },
-            ],
-            checked: false,
+          synced_block: {
+            synced_from: {
+              block_id: "4e2047a3549d4c3097ab7f3b228335b6",
+              type: "block_id",
+            },
           },
         },
-        ...blank(3),
+        ...blank(4),
         {
           object: "block",
           heading_1: {
@@ -102,7 +96,7 @@ exports.createPage = async function createPage() {
             color: "gray_background",
           },
         },
-        ...blank(4),
+        ...blank(5),
         {
           object: "block",
           heading_1: {
@@ -116,7 +110,7 @@ exports.createPage = async function createPage() {
             color: "gray_background",
           },
         },
-        ...blank(4),
+        ...blank(5),
       ],
     });
     console.log(response);

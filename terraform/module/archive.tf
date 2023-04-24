@@ -15,7 +15,7 @@ resource "null_resource" "main" {
 
   provisioner "local-exec" {
     command = <<EOF
-    npm i
+    npm ci
     EOF
 
     working_dir = "${path.module}/handlers"

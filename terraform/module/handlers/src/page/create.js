@@ -1,6 +1,5 @@
 const { notion } = require("../notionClient");
 const { blank, getDate } = require("../utils");
-const randomEmoji = require("@0xadada/random-emoji");
 
 exports.createPage = async function createPage() {
   try {
@@ -37,10 +36,6 @@ exports.createPage = async function createPage() {
           },
         },
       },
-      icon: {
-        emoji: randomEmoji("food"),
-        type: "emoji",
-      },
       children: [
         {
           object: "block",
@@ -66,7 +61,7 @@ exports.createPage = async function createPage() {
             rich_text: [
               {
                 text: {
-                  content: "✅ Todo",
+                  content: " Todo",
                 },
               },
             ],
@@ -89,7 +84,7 @@ exports.createPage = async function createPage() {
             rich_text: [
               {
                 text: {
-                  content: "✏️ Note",
+                  content: " Note",
                 },
               },
             ],
@@ -103,7 +98,7 @@ exports.createPage = async function createPage() {
             rich_text: [
               {
                 text: {
-                  content: "✨ TIL",
+                  content: " TIL",
                 },
               },
             ],

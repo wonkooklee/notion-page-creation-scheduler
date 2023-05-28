@@ -21,12 +21,8 @@ exports.createPage = async function createPage() {
         Tags: {
           multi_select: [
             {
-              color: "yellow",
-              name: "new",
-            },
-            {
               color: "blue",
-              name: "daily",
+              name: "automated",
             },
           ],
         },
@@ -36,77 +32,7 @@ exports.createPage = async function createPage() {
           },
         },
       },
-      children: [
-        {
-          object: "block",
-          callout: {
-            rich_text: [
-              {
-                text: {
-                  content: `이 페이지는 scheduled-lambda에 의헤 \`${getDate(
-                    true
-                  )} (KST)\`에 생성되었습니다.`,
-                },
-                type: "text",
-                annotations: {
-                  italic: true,
-                },
-              },
-            ],
-          },
-        },
-        {
-          object: "block",
-          heading_1: {
-            rich_text: [
-              {
-                text: {
-                  content: " Todo",
-                },
-              },
-            ],
-            color: "gray_background",
-          },
-        },
-        {
-          object: "block",
-          synced_block: {
-            synced_from: {
-              block_id: "4e2047a3549d4c3097ab7f3b228335b6",
-              type: "block_id",
-            },
-          },
-        },
-        ...blank(4),
-        {
-          object: "block",
-          heading_1: {
-            rich_text: [
-              {
-                text: {
-                  content: " Note",
-                },
-              },
-            ],
-            color: "gray_background",
-          },
-        },
-        ...blank(5),
-        {
-          object: "block",
-          heading_1: {
-            rich_text: [
-              {
-                text: {
-                  content: " TIL",
-                },
-              },
-            ],
-            color: "gray_background",
-          },
-        },
-        ...blank(5),
-      ],
+      children: [...blank(5)],
     });
     console.log(response);
     console.log("Success! Entry added.");
